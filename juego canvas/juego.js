@@ -3,7 +3,6 @@
 	construido con canvas, utilizando las flechas: arriba, abajo, 
 	derecha e izquierda. (5pts.)
 */
-
 var boton = document.getElementById("boton");
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -13,7 +12,7 @@ var x = canvas.width/2;
 var y = canvas.height - 40;
 var pX = (canvas.width - 15)/2;
 	
-		class Rectangle {
+	class Rectangle {
 		contructor(x,y){
 			this.x = x;
 			this.y = y;
@@ -31,11 +30,13 @@ var pX = (canvas.width - 15)/2;
 		}
 	}
 
-//funciones de animacion
 
+//instanciando nuestro rectangulo
+var test = new Rectangle(x,y);
+
+//funciones de animacion
 	function dibujarRect(){
 		ctx.beginPath()
-		var test = new Rectangle(x,y);
 		ctx.rect(pX, this.y , 15, 15);
 		ctx.fillStyle = "black";
 		ctx.fill();
@@ -56,16 +57,15 @@ var pX = (canvas.width - 15)/2;
 		frame();
 	}
 
-//funciones de control	
 
+//funciones de control	
 	function keyDownHandler(event){
 		var tecla = event.keyCode;
-			if(tecla == 39 ) {
+			if(tecla == 39){
 				pX += 15;
 			}
-
 			else if(tecla == 37){
-				pX += -15;
+				pX -= 15;
 			}
 	}
 
