@@ -8,23 +8,20 @@
  var boton = document.getElementById("boton");
  var canvas = document.getElementById("canvas");
  var ctx = canvas.getContext("2d");
- var ancho = canvas.width;
- var alto = canvas.height;
- var x = canvas.width/2;
- var y = canvas.height/2;
  var velocidad = 10;
  var direccion = (canvas.width- 15)/2;
+ var altura = (canvas.height - 15)/2;
 	
 	
  //funciones de animacion
 	 function dibujarRect(){
-		 ctx.rect(direccion, this.y - 15 , 15, 15);
+		 ctx.rect(direccion, altura , 15, 15);
 		 ctx.fillStyle = "black";
 		 ctx.fill();
 	 }
 	
 	 function dibujar(){
-	 	 ctx.clearRect(0,0,ancho,alto);
+	 	 ctx.clearRect(0,0,canvas.width,canvas.height);
 		 ctx.beginPath();
 		 dibujarRect();
 		 ctx.closePath();
@@ -43,17 +40,21 @@
  //funciones de control	
 	 function keyDownHandler(event){
 		 var tecla = event.keyCode;
-			 if(tecla == 39){
-			 	 direccion += velocidad;		
+			 if(tecla == 37){
+			 	 direccion -= velocidad;		
 			 }
-		
-			 else if(tecla == 37){
-			 	 direccion -= velocidad;
+			
+			else if(tecla == 38){
+				 altura -= velocidad;
+			} 
+
+			 else if(tecla == 39){
+			 	 direccion += velocidad;
 			}
 
 			else if(tecla == 40){
-				direccion += velodad;
-			}	 
-		}
+				 altura += velocidad;
+			}	
+		}  //function
 
 	 
