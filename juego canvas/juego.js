@@ -1,7 +1,7 @@
 /* 
 	 Haga un programa en javascript que permita mover un rectángulo 
 	 construido con canvas, utilizando las flechas: arriba, abajo, 
-	 derecha e izquierda. (5pts.)
+	 derecha e izquierda. 
       */
 
 //variables globales
