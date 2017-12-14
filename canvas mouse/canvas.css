@@ -1,0 +1,25 @@
+body {
+   			background: url("fondo.jpg");
+    		background-size: 1366px 768px;
+    		background-repeat: no-repeat;; 
+		}
+
+canvas {
+			background-color: #F8F8FF;
+			position: absolute;
+			top: 20%;
+			left: 35%;
+		}		
+
+#boton:hover{
+			background-color: black;
+			color: red;
+		}
+
+        #boton {
+			position: absolute;
+			padding: 50;
+			background: white;
+			bottom: 90%;
+			left: 49%;
+		}		
