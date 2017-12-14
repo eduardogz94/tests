@@ -2,24 +2,29 @@
  var canvas = document.getElementById("canvas");
  var ctx = canvas.getContext("2d");
  var onMove = false;
- var X = (canvas.width - 15)/2;
- var Y = (canvas.height - 15)/2;
+ var z = (canvas.width - 15)/2;
+ var v = (canvas.height - 15)/2;
 
+ class Rectangulo {
+ 	constructor(){
+ 	 this.x = z;
+ 	 this.y = v;
+ 	 this.h = 20;
+ 	 this.w = 20;
+ 	 this.right = this.x + this.w;
+ 	 this.left = this.y + this.h;
+ 	}
 
- class Rectangulo {	 	 
- 	 dibujar(){
- 	 	 ctx.clearRect(0,0, canvas.width,canvas.height);
- 	  	 ctx.rect(X, Y , 15, 15);
+ 	 dibujar(){	 	 
+ 		 ctx.clearRect(0,0, canvas.width, canvas.height);
 	 	 ctx.fillStyle = "black";
-	 	 ctx.fill();
+	 	 ctx.fillRect(this.x, this.y , this.w, this.h);
  	 }
  }
 
  var rect = new Rectangulo();
 
- function actualizar(){
-	 rect.dibujar();
- }
+ rect.dibujar();
 	
  function oMousePos(canvas, evt) {
  	 var client = canvas.getBoundingClientRect();
@@ -33,19 +38,18 @@
   	 var mousePos = oMousePos(canvas, evt);
      if (ctx.isPointInPath(mousePos.x, mousePos.y)) {
          onMove = true;
-         rect.x = X - mousePos.x;
-         rect.y = Y - mousePos.y;
-     	 
-         actualizar();
+         z = z - mousePos.x;
+         v = v - mousePos.y;
+         rect.dibujar(); 
      }
  }, false);
 
  canvas.addEventListener("mousemove", function(evt) {
   	 var mousePos = oMousePos(canvas, evt);
      if (onMove) {
-         X = mousePos.x + rect.x, 
-         Y = mousePos.y + rect.y
-         actualizar();
+     	 z = mousePos.x + rect.x; 
+         v = mousePos.y + rect.y;
+       	 rect.dibujar();
      }
  }, false);
 

@@ -8,7 +8,7 @@ canvas {
 			background-color: #F8F8FF;
 			position: absolute;
 			top: 20%;
-			left: 35%;
+			left: 30%;
 		}		
 
 #boton:hover{
@@ -16,10 +16,12 @@ canvas {
 			color: red;
 		}
 
-        #boton {
+       #boton {
 			position: absolute;
-			padding: 50;
-			background: white;
-			bottom: 90%;
-			left: 49%;
-		}		
+			font-size: 42px;
+			top: 5%;
+			border: none;
+			left: 46%;
+			background-color: red;
+			color:black;
+		}	
