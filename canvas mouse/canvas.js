@@ -11,15 +11,14 @@
  	 this.y = v;
  	 this.h = 20;
  	 this.w = 20;
- 	 this.right = this.x + this.w;
- 	 this.left = this.y + this.h;
  	}
 
  	 dibujar(){	 	 
  		 ctx.clearRect(0,0, canvas.width, canvas.height);
 	 	 ctx.fillStyle = "black";
-	 	 ctx.fillRect(this.x, this.y , this.w, this.h);
- 	 }
+     ctx.rect(this.x, this.y, this.w, this.h);
+     ctx.fill(); 	 
+   }
  }
 
  var rect = new Rectangulo();
@@ -34,7 +33,7 @@
      };
  }
 
- canvas.addEventListener("mousedown", function(evt) {   
+ ctx.canvas.addEventListener("mousedown", function(evt) {   
   	 var mousePos = oMousePos(canvas, evt);
      if (ctx.isPointInPath(mousePos.x, mousePos.y)) {
          onMove = true;
@@ -44,15 +43,15 @@
      }
  }, false);
 
- canvas.addEventListener("mousemove", function(evt) {
+ ctx.canvas.addEventListener("mousemove", function(evt) {
   	 var mousePos = oMousePos(canvas, evt);
      if (onMove) {
-     	 z = mousePos.x + rect.x; 
+     	   z = mousePos.x + rect.x; 
          v = mousePos.y + rect.y;
        	 rect.dibujar();
      }
  }, false);
 
- canvas.addEventListener("mouseup", function(evt) {
+ ctx.canvas.addEventListener("mouseup", function(evt) {
   	 onMove = false;
  }, false);

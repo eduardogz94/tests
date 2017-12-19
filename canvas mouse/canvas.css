@@ -17,11 +17,11 @@ canvas {
 		}
 
        #boton {
-			position: absolute;
-			font-size: 42px;
-			top: 5%;
-			border: none;
-			left: 46%;
 			background-color: red;
+			border: none;
 			color:black;
+			font-size: 42px;
+			left: 46%;
+			position: absolute;
+			top: 5%;
 		}	
